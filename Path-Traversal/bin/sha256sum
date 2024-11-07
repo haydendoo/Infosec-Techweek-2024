@@ -1,8 +1,0 @@
-0~#!/bin/bash
-# sha256sum: Compute and check SHA-256 message digest
-echo "Usage: sha256sum [file...]"
-for file in "$@"; do
-    sha256=$(openssl dgst -sha256 "$file" | awk '{print $2}')
-    echo "$sha256  $file"
-done
-

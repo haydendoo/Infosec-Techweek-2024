@@ -1,7 +1,0 @@
-#!/bin/bash
-# dpkg-deb: Package management utility for Debian
-echo "Usage: dpkg-deb [options] <command> <package>"
-echo "Commands:"
-echo "  --extract    Extract package contents"
-echo "  --info       Display package information"
-echo "  --compare    Compare two packages"

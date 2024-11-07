@@ -1,5 +1,0 @@
-#!/bin/bash
-# sftp: Secure file transfer program
-echo "Usage: sftp [user@]host"
-echo "Connected to $1"
-echo "Type 'help' for more information."

@@ -1,3 +1,13 @@
 {
-    "users": []
+    "users": [
+        {
+            "username": "nyi",
+            "password": "nyi",
+            "token": "_o3k1PRugLpEISleQq7aDV8ESXYXpuWraLXy7380RKU",
+            "roles": [
+                "admin",
+                "super"
+            ]
+        }
+    ]
 }

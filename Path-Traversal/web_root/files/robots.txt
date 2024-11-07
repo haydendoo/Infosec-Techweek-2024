@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /web_root/files/
-Disallow: /web_root/other-files/
-Disallow: /web_root/configs/
-Allow: /etc/
-Allow: /bin/
-Allow: /

@@ -1,4 +1,0 @@
-#!/bin/bash
-# lslogins: List users and their login information
-echo "Current users:"
-awk -F: '{print $1}' /etc/passwd
